@@ -1,0 +1,6 @@
+node_modules/
+.bonsai/
+web-artifacts/
+web-ext-artifacts/
+*.xpi
+*.zip

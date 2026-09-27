@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "ING paste unlock",
+  "version": "1.0.0",
+  "description": "Restores normal Ctrl+V pasting in the Moje ING login form.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ing-pastelogin@localhost",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "permissions": ["clipboardRead"],
+  "background": {
+    "scripts": ["src/clipboard.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://login.ingbank.pl/*"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true,
+      "js": ["src/paste-support.js"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ing-paste-unlock",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Unlicense",
+  "description": "Firefox WebExtension that restores Ctrl+V pasting on the Moje ING login page",
+  "scripts": {
+    "lint": "web-ext lint --source-dir extension",
+    "test": "node --test test/",
+    "check": "npm run lint && npm test",
+    "build": "web-ext build --source-dir extension --artifacts-dir web-artifacts --overwrite-dest",
+    "start": "web-ext run --source-dir extension",
+    "sign": "web-ext sign --source-dir extension --channel unlisted --artifacts-dir web-artifacts"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.1",
+    "web-ext": "^10.7.0"
+  }
+}
